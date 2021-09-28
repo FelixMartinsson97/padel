@@ -1,0 +1,19 @@
+/*** TABLET CSS ***/
+html {
+    font-size: 18px;
+}
+
+/** FEATURES **/
+
+.flex-container {
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 5rem;
+ 
+}
+.card {
+    flex-basis: 100%;
+}
+.card + .card {
+    margin-left: 1em;
+}

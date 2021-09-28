@@ -1,0 +1,299 @@
+/*** MAIN CSS ***/
+/** FOUNDATION - Här är reset m.m. **/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #009eff;
+}
+
+/** BASE - Grunden **/
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;  /* = 1 * 16px */
+    line-height: 1.5;
+    font-family: 'Karla', sans-serif;
+}
+
+h1 {
+    font-size: 3rem; /* = 3 * 16px */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: rgb(19, 219, 226);
+}
+
+h2 {
+    font-size: 2.5rem; /* = 2.5 * 16px */
+    color: rgb(19, 219, 226) ;
+}
+
+h3 {
+    font-size: 2rem; /* = 2 * 16px */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color:  rgb(19, 219, 226);
+}
+
+h4 {
+    font-size: 2rem; /* = 2 * 16px */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+
+p {
+    font-size: 1.25rem; /* = 2 * 16px */
+    margin: 0;
+    padding: 0;
+    text-align: center;   
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Spectral', serif;
+    line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+img {
+    margin-bottom: .5em;
+    
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var( --primary-color );
+}
+
+input,
+textarea,
+button {
+    display: block;
+    padding: 5em 1em;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+input [type="submit"], button {
+    background-color: blue;
+    text-transform: uppercase;
+    color: wheat;
+}
+/** MODULE - Här är layout **/
+
+/** SITE HEADER **/
+.site-header {
+    display: grid;
+    grid-template-columns: 1fr 3rem;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        " L B "
+        " M M "
+    ;
+    
+    align-items: center; 
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+}
+/** BRAND **/
+.brand {
+    grid-area: L;
+}
+.brand-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 2rem;
+}
+/** SITE NAVIGATION **/
+.site-navigation {
+    grid-area: M;
+    display: none;
+}
+/* Toggle Button */
+.toggle-btn {
+    grid-area: B;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    padding: 0 .5em;
+    background-color: rgb(19, 219, 226);
+    cursor: pointer;
+
+}
+
+.toggle-btn .bars,
+.toggle-btn .bars::before,
+.toggle-btn .bars::after {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+}
+.toggle-btn .bars::before,
+.toggle-btn .bars::after {
+    content: '';
+}
+
+.toggle-btn .bars::before {
+    position: relative;
+    top: -10px;
+}
+
+.toggle-btn .bars::after {
+    position: relative;
+    top: 8px;
+}
+
+/* Checkbox */
+.toggle-menu {
+    display: none;
+} 
+.toggle-menu:checked + .site-navigation {
+    display: block;
+}
+
+/** Menu **/
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+.menu-item {
+    /* flex-basis: 100%; */
+}
+.menu-item a {
+    display: block;
+    text-decoration: none;
+    padding: .5rem 1.5rem;
+    color: white;
+    background-color: rgb(19, 219, 226);;
+    margin: .5rem;
+}
+.menu-item.active a {
+    background-color: rgb(19, 219, 226)    ;
+    ;
+}
+.menu-item a:hover {
+    color: #000;
+    background-color: rgb(255, 255, 255);
+}
+
+.site-footer {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 3rem 1rem;
+}
+.site-footer a {
+    color: rgb(0, 0, 0);
+    align-items: center;
+}
+
+
+
+/** FEATURES **/
+.features {
+    padding: 2em 1em;
+    margin-bottom: 5rem;
+}
+
+.card {
+    /* display: flex;
+    flex-direction: column; */
+ color: black;
+ align-items: center;
+}
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid rgb(255, 255, 255); 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+  
+
+  input[type=submit] {
+    background-color: rgb(19, 219, 226);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+  input[type=submit]:hover {
+    background-color: #ffffff;
+  }
+  
+ 
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+.content {
+    align-items: center;
+}
+
+/** MAP **/
+.google-map {
+    width: 100%;
+    height: 40vh;
+}
+
+.image-content {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 1rem;
+}
+.image-content .image {
+    margin-right: 2rem;
+}
+.image-content:nth-of-type(2n) .image {
+    margin-left: 2rem;
+    order: 2;
+}
+.image-content .content {}
+
+
+
+
+/** COSMETIC - Här gör vi unik styling på komponenter **/ 
